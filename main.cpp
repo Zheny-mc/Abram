@@ -8,6 +8,7 @@ int main()
     printf("str = %d\n", A.size());
     printf("col = %d\n", A[0].size());
 
+    
 
     return 0;   
 }

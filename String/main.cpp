@@ -5,13 +5,14 @@
 int main()
 {
                         
-    string s = "HellH worww hellh ggenyg";
+    string s = "hello  world   hello";
     char ch = ' ';
 
     vector<string> Words = find(s, ch);
 
-    //String50(Words);
     
+    String57(Words); 
+
     cout << endl;
 
     return 0;

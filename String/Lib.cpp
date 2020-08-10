@@ -187,4 +187,110 @@ void String50(const vector<string>& words)
     cout << words[0];
 }
 
+void insert_sort_word(vector<string>& words)
+{
+    /*сортирует строки по возрастанию*/
 
+    for (int i = 1; i < words.size(); i++)
+    {
+        int k = i;
+        while (k > 0 && words[k-1] > words[k])
+        {
+            string tmp = words[k-1];
+            words[k-1] = words[k];
+            words[k] = tmp;
+            
+            k--;
+        }
+    }
+}
+
+void String51(vector<string>& words)
+{
+    insert_sort_word(words);
+
+    for (int i = 0; i < words.size()-1; i++)
+        cout << words[i] << ' ';
+
+    cout << words[words.size()-1];
+}
+
+void String52(vector<string>& words)
+{
+    for (int i = 0; i < words.size(); i++)
+    {
+        if (words[i][0] >= 'a' && words[i][0] <= 'z')
+            cout << (char)(words[i][0] - 32);
+        else
+            cout << words[i][0];
+
+        for (int j = 1; j < words[i].size(); j++)
+        {
+            cout << words[i][j];
+        }
+        cout << ' ';
+    }
+}
+
+void String54(const string& str)
+{
+    int count = 0;//количество знаков препинания
+    const int n_vowel = 12;
+    char vowel[n_vowel] = {'a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'};
+
+    for (int i = 0; i < str.length(); i++)
+    {
+        for (int j = 0; j < n_vowel; j++)
+        {
+            if (str[i] == vowel[j])
+            {
+                count++;
+                break;
+            }
+        }
+    }    
+    cout << "Количество гласных букв: " << count << endl;
+}
+
+void String55(const vector<string>& words)
+{
+    int max_len_words = words[0].size();
+    int index_max_len_words = 0;
+
+    for (int i = 1; i < words.size(); i++)
+    {
+        if (max_len_words < words[i].size())
+        {    
+            index_max_len_words = i;
+            break;
+        }        
+    }
+
+    cout << "Самое первое длинное слово: "  << words[index_max_len_words] << endl;
+}
+
+void String56(const vector<string>& words)
+{
+    int min_len_words = words[0].size();
+    int index_min_len_words = 0;
+
+    for (int i = 1; i < words.size(); i++)
+    {
+        if (min_len_words > words[i].size())
+        {    
+            index_min_len_words = i;
+            min_len_words = words[i].size();
+        }        
+    }
+
+    cout << "Самое последнее короткое слово: "  << words[index_min_len_words] << endl;
+}
+
+void String57(const vector<string>& words)
+{
+    for (int i = 0; i < words.size()-1; i++)
+    {
+        cout << words[i] << ' ';
+    }
+    cout << words[words.size()-1];
+}
